@@ -1,0 +1,61 @@
+<!-- <app-nav></app-nav> -->
+<!-- <ion-header>
+    <ion-toolbar color="bgTransparent">
+        <ion-menu-button slot="start" menu="first"></ion-menu-button>
+        <ion-title> Solicitudes </ion-title>
+    </ion-toolbar>
+</ion-header> -->
+<ion-app class="mainContainer">
+
+
+
+<div class="header">
+
+    <div class="header__menu">
+        <ion-menu-button slot="start" menu="first"></ion-menu-button>
+    </div>
+
+    <h2 class="header__title">Solicitudes</h2>
+</div>
+
+<ion-content id="main" color="secondary" class="wrapper">
+    <div class="content" color="dark">
+
+        <div class="content__header">
+            <ion-text>
+                <h2>Lo más pedido</h2>
+            </ion-text>
+        </div>
+
+        <ion-list class="content__list" color="dark">
+
+            <ion-item lines="none" class="content__list--item" color="dark" *ngFor="let item of lista" (click)="openCategory(item.nombre)">
+
+                <ion-avatar slot="start">
+                    <img [src]="item.imagen">
+                </ion-avatar>
+                <ion-label>
+                    <h2>{{item.nombre}}</h2>
+                    <h3>Frase de resalte del servicio</h3>
+                    <p>Por que contratar este servicio por tutum</p>
+                </ion-label>
+                
+            </ion-item>
+
+        </ion-list>
+
+        <ion-col class="btnActions">
+
+            <button class="button btn btnAdelante" [routerLink]="['/categorias']">
+                <span class="btnText">Ver todos</span>
+                <span class="icoElipse">
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                </span>
+            </button>
+
+        </ion-col>
+    </div>
+</ion-content>
+
+<div class="footer"></div>
+</ion-app>
